@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — MixTrove</title>
+  <meta name="description" content="How the MixTrove Chrome extension handles settings, your YouTube session, account email and payments.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" href="assets/icon-128.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">
+        <img src="assets/icon-128.png" alt="" width="28" height="28">
+        MixTrove
+      </a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="./">Home</a>
+        <a href="privacy-pl.html" lang="pl" hreflang="pl">Polski</a>
+        <a href="https://chromewebstore.google.com/detail/amgdkimmkgfmkdnclchmcbdaafkgflih">Chrome Web Store</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: November 24, 2026. Applies to MixTrove 0.3.0 and later for Chrome (extension ID <code>amgdkimmkgfmkdnclchmcbdaafkgflih</code>).</p>
+
+    <div class="summary">
+      <p><strong>Short version:</strong> MixTrove runs in your browser. It has no developer-run servers, and the extension contains no analytics, advertising or tracking. It does not sell or share personal data.</p>
+      <p>The only account information is the email address you use with ExtensionPay, our payment and account provider. It is stored by Chrome and used locally to apply the Free-plan limit and recognise your Pro purchase. ExtensionPay keeps the account record needed for sign-in and payments.</p>
+    </div>
+
+    <section id="who-we-are">
+      <h2>1. Who we are</h2>
+      <p>MixTrove is an independent browser extension that archives tracks from YouTube Mixes into a private playlist on the user&rsquo;s own YouTube account. &ldquo;We&rdquo; means the MixTrove developer. MixTrove is not affiliated with, endorsed by, or sponsored by YouTube or Google.</p>
+      <p>For privacy questions, use the contact section at the end of this page.</p>
+    </section>
+
+    <section id="data">
+      <h2>2. What MixTrove handles</h2>
+      <dl class="data-table">
+        <div class="data-row">
+          <dt>Current Mix queue</dt>
+          <dd>Track IDs, titles and durations are read from the YouTube Mix page you have open. Selected tracks are added to a playlist on your own YouTube account through your existing YouTube session. This data is not sent to us.</dd>
+        </div>
+        <div class="data-row">
+          <dt>Settings and counters</dt>
+          <dd>Archive playlist ID and title, minimum track duration, skip window, interface language, Auto-Capture switch, the monthly manual-save counter and the last-capture summary. Stored in <code>chrome.storage.local</code> on your device.</dd>
+        </div>
+        <div class="data-row">
+          <dt>Account email and Pro status</dt>
+          <dd>If you create a MixTrove account or buy Pro, ExtensionPay returns your email address and purchase status. The ExtensionPay library stores them in <code>chrome.storage.sync</code>, which Chrome may sync across devices signed in to the same Chrome profile. The email is also used locally (in lower case) as the key for the Free-plan monthly counter.</dd>
+        </div>
+        <div class="data-row">
+          <dt>Payment details</dt>
+          <dd>Card details are entered on ExtensionPay&rsquo;s checkout and processed by Stripe. They are never available to the MixTrove extension.</dd>
+        </div>
+        <div class="data-row">
+          <dt>YouTube session</dt>
+          <dd>Playlist changes are signed with the YouTube session already active in your browser, inside the page context. Your Google password, cookies and session tokens are not stored, copied or sent anywhere by the extension.</dd>
+        </div>
+      </dl>
+      <p class="note">MixTrove does not collect names, addresses, phone numbers, location, health data, browsing history, keystroke logs or audio recordings. It does not download audio from YouTube.</p>
+    </section>
+
+    <section id="permissions">
+      <h2>3. Permissions and why they are needed</h2>
+      <ul>
+        <li><strong>storage</strong> — saves your settings, the monthly save counter and the last-capture summary.</li>
+        <li><strong>tabs</strong> — checks whether the active tab is a YouTube Mix so the popup can show the right status.</li>
+        <li><strong>alarms</strong> — keeps the one-time login check running while the background service worker is idle.</li>
+        <li><strong>Access to youtube.com</strong> — shows the MixTrove panel on Mix pages and adds tracks to your playlist through YouTube&rsquo;s own page API.</li>
+        <li><strong>Access to extensionpay.com</strong> — opens the sign-in and checkout pages and verifies your Pro status.</li>
+      </ul>
+      <p>No optional permissions are requested, and MixTrove does not ask for access to all websites.</p>
+    </section>
+
+    <section id="network">
+      <h2>4. Network connections</h2>
+      <p>The extension communicates only with:</p>
+      <ul>
+        <li><strong>youtube.com</strong> — to read the Mix you opened and to add tracks to the playlist you selected.</li>
+        <li><strong>extensionpay.com</strong> — for account sign-in, checkout and Pro-status checks. Payment processing is provided by Stripe through ExtensionPay; see the <a href="https://extensionpay.com/">ExtensionPay website</a> for its privacy information.</li>
+      </ul>
+      <p>There are no developer-operated APIs, no analytics endpoints, no advertising networks and no remote code loading.</p>
+    </section>
+
+    <section id="not-collected">
+      <h2>5. What we do not do</h2>
+      <ul>
+        <li>No analytics, telemetry, crash reporting or usage statistics.</li>
+        <li>No advertising identifiers and no ad networks.</li>
+        <li>No selling, renting or sharing of personal data with third parties for their own purposes.</li>
+        <li>No use of data for creditworthiness, lending or advertising profiling.</li>
+        <li>No remote scripts: all code is bundled in the extension package.</li>
+      </ul>
+    </section>
+
+    <section id="retention">
+      <h2>6. Retention and deletion</h2>
+      <p>Settings and counters stay in your browser until you uninstall MixTrove or clear the extension&rsquo;s data. Uninstalling the extension removes its local storage.</p>
+      <p>Account records (email, purchase status) are held by ExtensionPay and Stripe for as long as your account or purchase exists. If you want them deleted, contact us through the issue tracker below and we will forward the request to ExtensionPay and Stripe.</p>
+    </section>
+
+    <section id="security">
+      <h2>7. Security</h2>
+      <p>All network communication uses HTTPS. The extension stores no passwords. The signed requests to YouTube are created locally from your existing session and are not logged or transmitted to third parties.</p>
+    </section>
+
+    <section id="children">
+      <h2>8. Children</h2>
+      <p>MixTrove is not directed to children under 13 and does not knowingly collect personal information from them. YouTube itself requires users to meet its own minimum age.</p>
+    </section>
+
+    <section id="limited-use">
+      <h2>9. Chrome Web Store Limited Use</h2>
+      <p>MixTrove&rsquo;s use of information received from Chrome APIs adheres to the <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">Chrome Web Store User Data Policy</a>, including the Limited Use requirements. Data is used only to provide the extension&rsquo;s single purpose: archiving tracks from YouTube Mixes into a playlist chosen by the user.</p>
+    </section>
+
+    <section id="changes">
+      <h2>10. Changes to this policy</h2>
+      <p>If the extension&rsquo;s data handling changes, this page will be updated and the &ldquo;Last updated&rdquo; date revised. Significant changes will also be noted in the extension&rsquo;s release notes on the Chrome Web Store.</p>
+    </section>
+
+    <section id="contact">
+      <h2>11. Contact</h2>
+      <p>Questions or requests about this policy: open an issue at <a href="https://github.com/ggrp-byte/MixTrove/issues">github.com/ggrp-byte/MixTrove/issues</a>. Please do not include passwords, payment details or other sensitive information in a public issue.</p>
+      <p class="note">This website is hosted on GitHub Pages. GitHub may process technical data such as your IP address to deliver the page; see the <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">GitHub Privacy Statement</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="./">MixTrove</a>
+        <a href="privacy-pl.html" lang="pl">Polityka prywatności (PL)</a>
+        <a href="https://chromewebstore.google.com/detail/amgdkimmkgfmkdnclchmcbdaafkgflih">Chrome Web Store</a>
+      </div>
+      <p>MixTrove is an independent project, not affiliated with YouTube or Google. YouTube is a trademark of Google LLC.</p>
+      <p>Last updated: November 24, 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

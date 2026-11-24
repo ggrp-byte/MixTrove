@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polityka prywatności — MixTrove</title>
+  <meta name="description" content="Jak rozszerzenie MixTrove dla Chrome obchodzi się z ustawieniami, sesją YouTube, adresem e-mail konta i płatnościami.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" href="assets/icon-128.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">
+        <img src="assets/icon-128.png" alt="" width="28" height="28">
+        MixTrove
+      </a>
+      <nav class="site-nav" aria-label="Witryna">
+        <a href="./">Strona główna</a>
+        <a href="privacy.html" lang="en" hreflang="en">English</a>
+        <a href="https://chromewebstore.google.com/detail/amgdkimmkgfmkdnclchmcbdaafkgflih">Chrome Web Store</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Prywatność</p>
+    <h1>Polityka prywatności</h1>
+    <p class="meta">Ostatnia aktualizacja: 24 listopada 2026. Dotyczy MixTrove 0.3.0 i nowszych dla Chrome (identyfikator rozszerzenia <code>amgdkimmkgfmkdnclchmcbdaafkgflih</code>).</p>
+
+    <div class="summary">
+      <p><strong>W skrócie:</strong> MixTrove działa w Twojej przeglądarce. Nie ma serwerów prowadzonych przez dewelopera, a samo rozszerzenie nie zawiera analityki, reklam ani narzędzi śledzących. Nie sprzedajemy ani nie udostępniamy danych osobowych.</p>
+      <p>Jedyną informacją o koncie jest adres e-mail używany w ExtensionPay — naszym dostawcy kont i płatności. Jest przechowywany przez Chrome i lokalnie służy do naliczania limitu wersji Free oraz rozpoznawania zakupu Pro. ExtensionPay prowadzi rekord konta potrzebny do logowania i płatności.</p>
+    </div>
+
+    <section id="who-we-are">
+      <h2>1. Kim jesteśmy</h2>
+      <p>MixTrove to niezależne rozszerzenie przeglądarki, które archiwizuje utwory z miksów YouTube na prywatnej playliście użytkownika na jego własnym koncie YouTube. „My” oznacza dewelopera MixTrove. MixTrove nie jest powiązany z YouTube ani Google, nie jest przez nie rekomendowany ani sponsorowany.</p>
+      <p>W sprawach prywatności skorzystaj z sekcji kontaktowej na końcu strony.</p>
+    </section>
+
+    <section id="data">
+      <h2>2. Jakie dane obsługuje MixTrove</h2>
+      <dl class="data-table">
+        <div class="data-row">
+          <dt>Bieżąca kolejka miksu</dt>
+          <dd>Identyfikatory, tytuły i długości utworów są odczytywane z otwartej strony miksu YouTube. Wybrane utwory trafiają do playlisty na Twoim koncie YouTube przez Twoją istniejącą sesję YouTube. Te dane nie są wysyłane do nas.</dd>
+        </div>
+        <div class="data-row">
+          <dt>Ustawienia i liczniki</dt>
+          <dd>Identyfikator i tytuł playlisty archiwum, minimalna długość utworu, okno pomijania, język interfejsu, przełącznik automatycznego przechwytywania, miesięczny licznik ręcznych zapisów i podsumowanie ostatniego przechwycenia. Przechowywane w <code>chrome.storage.local</code> na Twoim urządzeniu.</dd>
+        </div>
+        <div class="data-row">
+          <dt>E-mail konta i status Pro</dt>
+          <dd>Jeśli utworzysz konto MixTrove lub kupisz Pro, ExtensionPay zwróci Twój adres e-mail i status zakupu. Biblioteka ExtensionPay zapisuje je w <code>chrome.storage.sync</code>, które Chrome może synchronizować między urządzeniami zalogowanymi do tego samego profilu Chrome. Adres jest też używany lokalnie (małymi literami) jako klucz miesięcznego licznika wersji Free.</dd>
+        </div>
+        <div class="data-row">
+          <dt>Dane płatności</dt>
+          <dd>Dane karty są wpisywane na stronie płatności ExtensionPay i przetwarzane przez Stripe. Nigdy nie trafiają do rozszerzenia MixTrove.</dd>
+        </div>
+        <div class="data-row">
+          <dt>Sesja YouTube</dt>
+          <dd>Zmiany playlisty są podpisywane aktywną sesją YouTube w Twojej przeglądarce, w kontekście strony. Hasło do Google, pliki cookie i tokeny sesji nie są przez rozszerzenie przechowywane, kopiowane ani nigdzie wysyłane.</dd>
+        </div>
+      </dl>
+      <p class="note">MixTrove nie zbiera imion i nazwisk, adresów, numerów telefonów, lokalizacji, danych o zdrowiu, historii przeglądania, zapisów klawiatury ani nagrań dźwiękowych. Nie pobiera dźwięku z YouTube.</p>
+    </section>
+
+    <section id="permissions">
+      <h2>3. Uprawnienia i ich powód</h2>
+      <ul>
+        <li><strong>storage</strong> — zapisuje ustawienia, miesięczny licznik zapisów i podsumowanie ostatniego przechwycenia.</li>
+        <li><strong>tabs</strong> — sprawdza, czy aktywna karta to miks YouTube, aby popup pokazywał właściwy status.</li>
+        <li><strong>alarms</strong> — utrzymuje jednorazowe sprawdzanie logowania, gdy usługa w tle jest uśpiona.</li>
+        <li><strong>Dostęp do youtube.com</strong> — wyświetla panel MixTrove na stronach miksów i dodaje utwory do playlisty przez API strony YouTube.</li>
+        <li><strong>Dostęp do extensionpay.com</strong> — otwiera strony logowania i płatności oraz weryfikuje status Pro.</li>
+      </ul>
+      <p>Rozszerzenie nie prosi o uprawnienia opcjonalne ani o dostęp do wszystkich stron.</p>
+    </section>
+
+    <section id="network">
+      <h2>4. Połączenia sieciowe</h2>
+      <p>Rozszerzenie komunikuje się wyłącznie z:</p>
+      <ul>
+        <li><strong>youtube.com</strong> — aby odczytać otwarty miks i dodać utwory do wybranej playlisty.</li>
+        <li><strong>extensionpay.com</strong> — na potrzeby logowania, płatności i sprawdzania statusu Pro. Płatności obsługuje Stripe za pośrednictwem ExtensionPay; informacje o prywatności znajdziesz na <a href="https://extensionpay.com/">stronie ExtensionPay</a>.</li>
+      </ul>
+      <p>Nie ma API prowadzonych przez dewelopera, punktów końcowych analityki, sieci reklamowych ani ładowania kodu ze zdalnych serwerów.</p>
+    </section>
+
+    <section id="not-collected">
+      <h2>5. Czego nie robimy</h2>
+      <ul>
+        <li>Brak analityki, telemetrii, raportowania awarii i statystyk użycia.</li>
+        <li>Brak identyfikatorów reklamowych i sieci reklamowych.</li>
+        <li>Brak sprzedaży, wynajmu i udostępniania danych osobowych podmiotom trzecim do ich własnych celów.</li>
+        <li>Brak wykorzystywania danych do oceny zdolności kredytowej, pożyczek i profilowania reklamowego.</li>
+        <li>Brak zdalnych skryptów: cały kod jest częścią paczki rozszerzenia.</li>
+      </ul>
+    </section>
+
+    <section id="retention">
+      <h2>6. Przechowywanie i usuwanie</h2>
+      <p>Ustawienia i liczniki pozostają w przeglądarce do odinstalowania MixTrove lub wyczyszczenia danych rozszerzenia. Odinstalowanie usuwa jego pamięć lokalną.</p>
+      <p>Rekordy konta (e-mail, status zakupu) są przechowywane przez ExtensionPay i Stripe tak długo, jak istnieje konto lub zakup. Jeśli chcesz je usunąć, napisz przez zgłoszenie w repozytorium (sekcja kontaktowa) — przekażemy prośbę do ExtensionPay i Stripe.</p>
+    </section>
+
+    <section id="security">
+      <h2>7. Bezpieczeństwo</h2>
+      <p>Cała komunikacja sieciowa używa HTTPS. Rozszerzenie nie przechowuje haseł. Podpisane żądania do YouTube powstają lokalnie na podstawie Twojej istniejącej sesji i nie są rejestrowane ani wysyłane podmiotom trzecim.</p>
+    </section>
+
+    <section id="children">
+      <h2>8. Dzieci</h2>
+      <p>MixTrove nie jest kierowany do dzieci poniżej 13. roku życia i nie zbiera od nich świadomie danych osobowych. Sam YouTube wymaga spełnienia własnego minimalnego wieku.</p>
+    </section>
+
+    <section id="limited-use">
+      <h2>9. Zasada ograniczonego użycia Chrome Web Store</h2>
+      <p>Wykorzystanie informacji otrzymanych przez interfejsy Chrome jest zgodne z <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">polityką danych użytkownika Chrome Web Store</a>, w tym z zasadą ograniczonego użycia (Limited Use). Dane służą wyłącznie do realizacji jedynego celu rozszerzenia: archiwizowania utworów z miksów YouTube na playliście wybranej przez użytkownika.</p>
+    </section>
+
+    <section id="changes">
+      <h2>10. Zmiany polityki</h2>
+      <p>Jeśli sposób obsługi danych się zmieni, ta strona zostanie zaktualizowana, a data „Ostatnia aktualizacja” zmieniona. Istotne zmiany będą też opisane w informacjach o wersji na Chrome Web Store.</p>
+    </section>
+
+    <section id="contact">
+      <h2>11. Kontakt</h2>
+      <p>Pytania i wnioski dotyczące tej polityki: zgłoszenie w repozytorium <a href="https://github.com/ggrp-byte/MixTrove/issues">github.com/ggrp-byte/MixTrove/issues</a>. Nie umieszczaj w publicznym zgłoszeniu haseł, danych płatniczych ani innych wrażliwych informacji.</p>
+      <p class="note">Ta strona jest hostowana na GitHub Pages. GitHub może przetwarzać dane techniczne, takie jak adres IP, aby dostarczyć stronę; szczegóły w <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">oświadczeniu o prywatności GitHuba</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="./">MixTrove</a>
+        <a href="privacy.html" lang="en">Privacy Policy (EN)</a>
+        <a href="https://chromewebstore.google.com/detail/amgdkimmkgfmkdnclchmcbdaafkgflih">Chrome Web Store</a>
+      </div>
+      <p>MixTrove to niezależny projekt, niepowiązany z YouTube ani Google. YouTube jest znakiem towarowym Google LLC.</p>
+      <p>Ostatnia aktualizacja: 24 listopada 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>
